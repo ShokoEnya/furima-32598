@@ -16,12 +16,12 @@
 
 ### Association
 
-- has_many :products
-- has_one :delivery
-- has_one :purchase
+- has_many :items
+- has_one :address
+- has_one :order
 
 
-## products テーブル
+## items テーブル
 
 | Column            | Type       | Options                        |
 | ----------------- | ---------- | ------------------------------ |
@@ -41,7 +41,7 @@
 - belongs_to :user
 
 
-## deliveries テーブル
+## addresses テーブル
 
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
@@ -58,7 +58,7 @@
 - belongs_to :user
 
 
-## purchases テーブル
+## orders テーブル
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
