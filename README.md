@@ -45,12 +45,12 @@
 
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
-| post_code  | string     | null: false                    |
-| prefecture | string     | null: false                    |
+| post_code  | integer    | null: false                    |
+| prefecture | integer    | null: false                    |
 | city       | string     | null: false                    |
 | address    | string     | null: false                    |
 | building   | string     |                                |
-| phone_no   | string     | null: false                    |
+| phone_no   | integer    | null: false                    |
 | user       | references | null: false, foreign_key: true |
 
 ### Association
