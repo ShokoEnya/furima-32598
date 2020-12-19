@@ -60,12 +60,10 @@
 
 ## orders テーブル
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| card_no       | string     | null: false                    |
-| expiry_month  | string     | null: false                    |
-| security_code | string     | null: false                    |
-| user          | references | null: false, foreign_key: true |
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| item   | references | null: false  foreign_key: true |
+| user   | references | null: false, foreign_key: true |
 
 ### Association
 
