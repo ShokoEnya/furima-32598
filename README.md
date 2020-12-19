@@ -28,12 +28,12 @@
 | image             |            | null: false                    |
 | product_name      | string     | null: false                    |
 | description       | text       | null: false                    |
-| category          | string     | null: false                    |
-| status            | string     | null: false                    |
-| delivery_fee      | string     | null: false                    |
-| dispatch_location | string     | null: false                    |
-| duration          | string     | null: false                    |
-| price             | string     | null: false                    |
+| category          | integer    | null: false                    |
+| status            | integer    | null: false                    |
+| delivery_fee      | integer    | null: false                    |
+| dispatch_location | integer    | null: false                    |
+| duration          | integer    | null: false                    |
+| price             | integer    | null: false                    |
 | user              | references | null: false, foreign_key: true |
 
 ### Association
