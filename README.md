@@ -18,7 +18,7 @@
 
 - has_many :items
 - has_one :address
-- has_one :order
+- has_many :order
 
 
 ## items テーブル
