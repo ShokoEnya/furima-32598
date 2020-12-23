@@ -58,7 +58,6 @@
       </div>
     </div>
 
-    <%# 配送について %>
     <div class="items-detail">
       <div class="weight-bold-text question-text">
         <span>配送について</span>
@@ -79,10 +78,9 @@
           発送までの日数
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+        <%= f.collection_select(:duration_id, Duration.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
       </div>
     </div>
-    <%# /配送について %>
 
     <%# 販売価格 %>
     <div class="sell-price">
