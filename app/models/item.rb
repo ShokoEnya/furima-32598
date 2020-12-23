@@ -10,11 +10,17 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :duration
 
-  with_options presence: true, numericality: { other_than: 1 } do
-    validates :category_id
-    validates :status
-    validates :delivery_fee
-    validates :prefecture
-    validates :duration
+  with_options presence: true do
+    validates :product_name
+    validates :description
+    validates :image
+    validates :price,
+    with_options numericality: { other_than: 1 } do
+      validates :category_id
+      validates :status
+      validates :delivery_fee
+      validates :prefecture
+      validates :duration
+    end
   end
 end
