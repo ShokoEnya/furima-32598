@@ -11,16 +11,16 @@ class Item < ApplicationRecord
   belongs_to :duration
 
   with_options presence: true do
-    validates :product_name
-    validates :description
+    validates :product_name, length: { maximum: 40 }
+    validates :description, length: { maximum: 1000 }
     validates :image
-    validates :price,
     with_options numericality: { other_than: 1 } do
       validates :category_id
-      validates :status
-      validates :delivery_fee
-      validates :prefecture
-      validates :duration
+      validates :status_id
+      validates :delivery_fee_id
+      validates :prefecture_id
+      validates :duration_id
     end
+    validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 9999999 }
   end
 end
