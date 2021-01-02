@@ -12,6 +12,7 @@ class OrdersController < ApplicationController
     if @user_order.valid?
       pay_item
       @user_order.save
+      @item.update(buyer_id: current_user.id)
       return redirect_to root_path
     else
       render :index
@@ -24,11 +25,11 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:user_order).permit(:post_code, :prefecture_id, :city, :addresses, :building, :phone_no).merge(user_id: current_user.id, item_id: @item.id, token: params[:token])
+    params.require(:user_order).permit(:post_code, :prefecture_id, :city, :addresses, :building, :phone_no).merge(seller_id: current_user.id, item_id: @item.id, token: params[:token])
   end
 
   def move_to_index
-    if @item.user_id == current_user.id
+    if @item.seller_id == current_user.id  || @item.buyer_id.present?
       redirect_to root_path
     end
   end
