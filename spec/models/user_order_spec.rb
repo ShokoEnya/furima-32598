@@ -37,7 +37,7 @@ RSpec.describe UserOrder, type: :model do
         expect(@user_order.errors.full_messages).to include("Prefecture can't be blank")
       end
       it '都道府県名が選択されていないと購入できない' do
-        @user_order.prefecture_id = '1'
+        @user_order.prefecture_id = 1
         @user_order.valid?
         expect(@user_order.errors.full_messages).to include('Prefecture needs to be selected')
       end
@@ -81,10 +81,10 @@ RSpec.describe UserOrder, type: :model do
         @user_order.valid?
         expect(@user_order.errors.full_messages).to include("Item can't be blank")
       end
-      it 'seller_idが空だと購入できない' do
-        @user_order.seller_id = ''
+      it 'user_idが空だと購入できない' do
+        @user_order.user_id = ''
         @user_order.valid?
-        expect(@user_order.errors.full_messages).to include("Seller can't be blank")
+        expect(@user_order.errors.full_messages).to include("User can't be blank")
       end
     end
   end
