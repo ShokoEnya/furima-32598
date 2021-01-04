@@ -7,5 +7,7 @@ FactoryBot.define do
     addresses     { '番地' }
     building      { '建物名' }
     phone_no      { '09000000000' }
+    item_id       { '1' }
+    seller_id     { '1' }
   end
 end

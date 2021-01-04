@@ -76,6 +76,16 @@ RSpec.describe UserOrder, type: :model do
         @user_order.valid?
         expect(@user_order.errors.full_messages).to include('Phone no is invalid. Input only half-width numbers.')
       end
+      it 'item_idが空だと購入できない' do
+        @user_order.item_id = ''
+        @user_order.valid?
+        expect(@user_order.errors.full_messages).to include("Item can't be blank")
+      end
+      it 'seller_idが空だと購入できない' do
+        @user_order.seller_id = ''
+        @user_order.valid?
+        expect(@user_order.errors.full_messages).to include("Seller can't be blank")
+      end
     end
   end
 end
