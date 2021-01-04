@@ -11,7 +11,7 @@ RSpec.describe UserOrder, type: :model do
         expect(@user_order).to be_valid
       end
       it '建物名が空でも商品が購入できる' do
-        @user_order.building = ""
+        @user_order.building = ''
         expect(@user_order).to be_valid
       end
     end
