@@ -11,6 +11,8 @@ class UserOrder
     validates :addresses
     validates :phone_no, numericality: { only_integer: true, message: 'is invalid. Input only half-width numbers.' },
                          length: { maximum: 11 }
+    validates :item_id
+    validates :seller_id
   end
 
   def save
