@@ -1,6 +1,6 @@
 class UserOrder
   include ActiveModel::Model
-  attr_accessor :post_code, :prefecture_id, :city, :addresses, :building, :phone_no, :seller_id, :buyer_id, :item_id, :order_id,
+  attr_accessor :post_code, :prefecture_id, :city, :addresses, :building, :phone_no, :user_id, :item_id, :order_id,
                 :token
 
   with_options presence: true do
@@ -12,11 +12,11 @@ class UserOrder
     validates :phone_no, numericality: { only_integer: true, message: 'is invalid. Input only half-width numbers.' },
                          length: { maximum: 11 }
     validates :item_id
-    validates :seller_id
+    validates :user_id
   end
 
   def save
-    order = Order.create(item_id: item_id, user_id: buyer_id)
+    order = Order.create(item_id: item_id, user_id: user_id)
     Address.create(post_code: post_code, prefecture_id: prefecture_id, city: city, addresses: addresses, building: building,
                    phone_no: phone_no, order_id: order.id)
   end
